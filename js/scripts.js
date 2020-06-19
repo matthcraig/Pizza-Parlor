@@ -1,38 +1,35 @@
 //business logic
-function Pizza(size, topping, price){
+function Pizza(size, sizePrice, topping, toppingPrice, price){
 this.size = size;
+this.sizePrice = sizePrice;
 this.topping = [];
-this.toppingPrice = 1;
+this.toppingPrice = toppingPrice
 this.price = price;
 }
 
 //basic price based on size
 Pizza.prototype.size = function(){
-  let size = 12;
-  if (this.size === "large"){
-    size = size + 3;
-  } else if (this.size === "medium") {
-    size = size + 2;
-  } else if (this.size === "small"){
-    size = size;
-  }
   this.size = size;
-  return size;
+  if (this.size === "large"){
+    this.sizePrice = 15;
+  } else if (this.size === "medium") {
+    this.sizePrice = 13;
+  } else if (this.size === "small"){
+    this.sizePrice = 11;
+  }
+  this.price();
 }
-let pizza = new Pizza(large);
-console.log(pizza);
-
 
 //add 1 for each topping
 Pizza.prototype.toppings = function(){
   this.topping.push(topping);
   this.topping.toppingPrice++;
-  return this.toppingPrice;
+  this.price();
 }
 
 //calculate total price
 Pizza.prototype.price = function(){
-  this.price += this.toppingPrice + this.size;
+  this.price = this.toppingPrice + this.sizePrice;
   return this.price;
 }
 
