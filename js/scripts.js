@@ -1,9 +1,7 @@
 //business logic
-function Pizza(size, sizePrice, topping, toppingPrice, price){
+function Pizza(size, topping, price){
 this.size = size;
-this.sizePrice = sizePrice;
-this.topping = [];
-this.toppingPrice = toppingPrice
+this.topping = topping;
 this.price = price;
 }
 
@@ -11,37 +9,38 @@ this.price = price;
 Pizza.prototype.size = function(){
   this.size = size;
   if (this.size === "large"){
-    this.sizePrice = 15;
+    this.size = 15;
   } else if (this.size === "medium") {
-    this.sizePrice = 13;
+    this.size = 13;
   } else {
-    this.sizePrice = 11;
+    this.size = 11;
   }
   this.price();
 }
 
 //add 1 for each topping
-Pizza.prototype.toppings = function(){
-  this.topping.push(topping);
-  this.topping.toppingPrice++;
-  this.price();
-}
+//Pizza.prototype.toppings = function(){
+//  this.topping.push(topping);
+//  this.toppingPrice++;
+//  this.price();
+//}
 
 //calculate total price
 Pizza.prototype.price = function(){
-  this.price = this.toppingPrice + this.sizePrice;
+  this.price = this.topping + this.size;
   return this.price;
 }
-
+let pizza = new Pizza(size, topping, price);
+let price = pizza.price();
 //UI logic
 
 $(document).ready(function(){
 $("form").submit(function(event){
 let size = $("select#pizzaSize").val();
 let topping = $("select#toppings").val();
-let pizza = new Pizza(size, topping);
-let price = pizza.price();
-console.log(price);
+
+
+$(".btn-info").text(price);
 event.preventDefault();
 })
 })
