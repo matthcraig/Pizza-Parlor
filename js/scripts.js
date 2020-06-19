@@ -14,7 +14,7 @@ Pizza.prototype.size = function(){
     this.sizePrice = 15;
   } else if (this.size === "medium") {
     this.sizePrice = 13;
-  } else if (this.size === "small"){
+  } else {
     this.sizePrice = 11;
   }
   this.price();
@@ -34,11 +34,15 @@ Pizza.prototype.price = function(){
 }
 
 //UI logic
-let pizza = new Pizza()
+
 $(document).ready(function(){
-$("form#pizza").submit(function(event){
-const inputPizzaSize = $("select#pizzaSize").val();
-const inputToppings = $("select#toppings").val();
+$("form").submit(function(event){
+let size = $("select#pizzaSize").val();
+let topping = $("select#toppings").val();
+let pizza = new Pizza(size, topping);
+let price = pizza.price();
+console.log(price);
+event.preventDefault();
 })
 })
 
