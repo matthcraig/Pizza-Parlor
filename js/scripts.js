@@ -33,4 +33,12 @@ Pizza.prototype.price = function(){
   return this.price;
 }
 
+//UI logic
+let pizza = new Pizza()
+$(document).ready(function(){
+$("form#pizza").submit(function(event){
+const inputPizzaSize = $("select#pizzaSize").val();
+const inputToppings = $("select#toppings").val();
+})
+})
 
