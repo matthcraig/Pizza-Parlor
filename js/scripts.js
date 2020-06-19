@@ -19,18 +19,8 @@ Pizza.prototype.sizePrice = function(){
 }
 // add 1 for each topping
   Pizza.prototype.toppingsPrice = function(){
-  let toppingprice = 0
-    if (this.topping === "mushroom") {
-      toppingprice = 1;
-    } else if (this.topping === "olives"){
-      toppingprice = 1;
-    } else if (this.topping === "special"){
-      toppingprice = 1;
-    } else {
-      return toppingprice;
-    }
+    return this.size + this.topping;
 }
-
 //calculate total price
 //  Pizza.prototype.totalPrice = function(){
 //  {this.price = this.size + this.topping}
@@ -45,7 +35,7 @@ let size = $("select#pizzaSize").val();
 let topping = $("select#toppings").val();
 
 let pizza = new Pizza(size, topping);
-$(".pizza-time").text("Your pizza is a " + size + " with " + topping + " topping and will cost $" + pizza.sizePrice());
+$(".pizza-time").text("Your pizza is a " + size + " with " + topping + " topping and will cost $" + pizza.toppingsPrice());
 event.preventDefault();
 });
 });
