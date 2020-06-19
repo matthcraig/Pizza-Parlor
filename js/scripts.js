@@ -1,10 +1,10 @@
 //business logic
 function Pizza(size, topping, price){
 this.size = size;
-this.topping = topping;
+this.topping = [];
+this.toppingPrice = 1;
 this.price = price;
 }
-
 
 Pizza.prototype.size = function(){
   let size = 12;
@@ -15,5 +15,12 @@ Pizza.prototype.size = function(){
   } else if (this.size === "small"){
     size = size;
   }
+  this.size = size;
   return size;
 }
+Pizza.prototype.toppings = function(){
+  this.topping.push(topping);
+  this.topping.toppingPrice++;
+  return this.toppingPrice;
+}
+
