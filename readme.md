@@ -1,37 +1,54 @@
-# _{Application Name}_
+# _Pizza-Parlor_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _This is a simulated virtual pizza shop experience, 2020_
 
-#### By _**{List of contributors}**_
+#### By _**Matthew Craig**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This site will take user entered information to order a pizza and return the pizza ordered along with the appropriate price._
+
+## Specs
+
+The program will allow the user to make a choice between pizza size and store the price as the user goes through the following options
+* Input: "Large"
+* Output: none (stored value $15)
+
+The program will allow the user to choose a variety of toppings
+* Input: "Mushrooms, olives"
+* Output: none (stored value of $1.50 for each topping)
+
+The program will allow the user to press an "order" button and display the pizza order and adjusted price
+* Input: "order"
+* Output: "Your pizza is a Large with Mushrooms and Olives, total price $18"
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
+* Clone repository using this link: https://github.com/mgcraig78/pizza-parlor
+* Go to the terminal and navigate to your desktop, using the command $ cd desktop
+* Navigate to the project folder, using the command $ cd pizza-parlor
+* Open in a text editor (Atom, Visual Studio Code, or similar). For Visual Studio Code, use the command $ code .
+* To preview this project in your browser, use the terminal command $ open index.html
 
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+_No known bugs_
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+_Matthew Craig: mgcraig78@gmail.com_
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_html, css, bootstrap, javascript, jquery_
+
+## Web address
+
+https://mgcraig78.github.io/Pizza-Parlor
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*MIT License*
 
-Copyright (c) 2016 **_{List of contributors or company name}_**
+Copyright (c) 2020 **_Matthew Craig_**
