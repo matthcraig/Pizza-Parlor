@@ -1,44 +1,31 @@
 //business logic
-function Pizza(size, topping, toppingPrice, price, totalPrice){
-this.size = size;
-this.topping = topping;
-this.toppingPrice = toppingPrice;
-this.price = price;
-this.totalPrice = totalPrice;
+function Pizza(size, toppings){
+  this.size = size;
+  this.toppings = toppings || [];
+// put a total price function here
 }
 
+toppingPrices["other"] || 0
 //basic price based on size
-Pizza.prototype.sizePrice = function(){
-  let sizeprice = 0;
-  if (this.size === "small"){
-    sizeprice = 11;
-  } else if (this.size === "medium") {
-    sizeprice = 12;
-  } else if (this.size === "large") {
-    sizeprice = 14
-  } 
-  this.price = sizeprice;
-  return this.price;
+Pizza.prototype.sizePrice = function(size){
+  const sizePrices = {"small": 11, "medium": 12, "large": 14};
+  return sizePrices[size] || 0;
 }
 // add 1 for each topping
-Pizza.prototype.toppingCost = function(){
-  let addOn = 0
-    if (this.topping === "mushroom") {
-      addOn = 1;
-    } else if (this.topping === "mushroom"){
-      addOn = 2;
-    } else if (this.topping === "mushroom"){
-      addOn = 3;
-    } else {
-      this.price += addOn;
-      return this.toppingPrice;  
-    }
-  }
-//calculate total price
-Pizza.prototype.total = function(){
-this.totalPrice = (this.price + this.toppingPrice);
-return this.totalPrice;
+Pizza.prototype.toppingPrice = function(){
+  const toppingPrices = {}
+  return this.toppingPrice;
 }
+
+Pizza.prototype.totalPrice = function(){
+  this.sizePrice(this.size) + this.toppingPrice
+}
+//linters
+//calculate total price
+//Pizza.prototype.total = function(){
+//this.totalPrice = (this.price + this.toppingPrice);
+//return this.totalPrice;
+//}
 
 //UI logic
 
