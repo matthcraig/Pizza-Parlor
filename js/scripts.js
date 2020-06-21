@@ -5,7 +5,6 @@ function Pizza(size, toppings){
 // put a total price function here
 }
 
-toppingPrices["other"] || 0
 //basic price based on size
 Pizza.prototype.sizePrice = function(size){
   const sizePrices = {"small": 11, "medium": 12, "large": 14};
@@ -18,8 +17,10 @@ Pizza.prototype.toppingPrice = function(){
 }
 
 Pizza.prototype.totalPrice = function(){
-  this.sizePrice(this.size) + this.toppingPrice
+  let toppingsPrice = this.toppings.reduce((sum, topping) => sum + this.toppingPrice(topping));
+  return this.sizePrice(this.size) + toppingsPrice;
 }
+
 //linters
 //calculate total price
 //Pizza.prototype.total = function(){
