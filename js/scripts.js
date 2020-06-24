@@ -7,24 +7,25 @@ function Pizza(size, topping){
 
 Pizza.prototype.sizePrice = function(){
   if (this.size === "large"){
-    return 15;
+      return 15;
   } else if (this.size === "medium"){
-    return 13;
+      return 13;
   } else if (this.size === "small"){
-    return 11;
+      return 11;
   } else {
-    return 0;
+      return 0;
   }
 }
-Pizza.prototype.isTopping = function(){
+Pizza.prototype.toppingPrice = function(){
   if (this.topping === "olive"){
-  toppingPrice = 1;
+    return 1;
   } else if (this.topping === "mushroom"){
-  toppingPrice = 1;
+    return 2;
   } else if (this.topping === "special"){
-  toppingPrice = 2;
+    return 3;
+  } else {
+    return 0
   }
-  return
 }
 $(document).ready(function(){
   $("form#pizza").submit(function(event){
