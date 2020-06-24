@@ -31,12 +31,12 @@ $(document).ready(function(){
   $("form#pizza").submit(function(event){
   let size = $("select#pizzaSize").val();
   let topping = $("select#toppings").val();
-  let price = toppingPrice + sizePrice;
   let pizza = new Pizza(size, topping);
+  let toppingPrice = pizza.toppingPrice();
+  let sizePrice = pizza.sizePrice();
+  let price = toppingPrice + sizePrice;
 
-
-  $(".topping").text(pizza.isTopping());
-  $(".pizza-time").text("Your pizza is a " + size + " with " + topping + " topping and will cost $" + price)
+  $(".pizza-time").text("Your pizza is a " + size + " with " + topping + " topping and will cost $" + price);
   event.preventDefault();
   });
 });
