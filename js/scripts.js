@@ -5,15 +5,16 @@ function Pizza(size, topping){
   this.price = this.sizePrice + this.toppingPrice;
 }
 
-Pizza.prototype.isSize = function(){
+Pizza.prototype.sizePrice = function(){
   if (this.size === "large"){
-  sizePrice = 15;
+    return 15;
   } else if (this.size === "medium"){
-  sizePrice = 13;
+    return 13;
   } else if (this.size === "small"){
-  sizePrice = 11;
+    return 11;
+  } else {
+    return 0;
   }
-  return
 }
 Pizza.prototype.isTopping = function(){
   if (this.topping === "olive"){
@@ -30,8 +31,9 @@ $(document).ready(function(){
   let size = $("select#pizzaSize").val();
   let topping = $("select#toppings").val();
   let price = toppingPrice + sizePrice;
-  
-  let pizza = new Pizza(size, topping, price);
+  let pizza = new Pizza(size, topping);
+
+
   $(".topping").text(pizza.isTopping());
   $(".pizza-time").text("Your pizza is a " + size + " with " + topping + " topping and will cost $" + price)
   event.preventDefault();
